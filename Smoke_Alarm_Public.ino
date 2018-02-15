@@ -1,3 +1,5 @@
+/*based on project https://github.com/rniemand/ArduinoProjects/blob/master/projects/gate-alarm/gate-alarm.ino */
+
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
