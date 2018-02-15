@@ -1,0 +1,1 @@
+# hass_smoke_alarm
