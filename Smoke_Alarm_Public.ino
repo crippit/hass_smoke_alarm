@@ -23,7 +23,7 @@ long      fire_last_triggered     = 0;
 short     fire_trigger_threshold  = 100;
 short     fire_publish_interval   = 10 * 60 * 5; // Every 5 min
 short     fire_loop_count         = fire_publish_interval; // Publish immediatley
-String    fire_topic              = "security/smoke_alarm" + MQTT_CLIENT_NAME;
+String    fire_topic              = "home-assistant/security/smoke_alarm";
 
 /*************************     Global Vars     *********************************/
 WiFiClient                      esp_client;
@@ -37,15 +37,11 @@ void setup() {
   // Setup WiFi connection & connect to MQTT server
   waitForWiFiConnection();
   connectMqtt();
+  while (!mqtt_client.connected()) { Serial.print(".");}
+  publishFireAlert();
 }
 
 void loop(){
-  // Ensure that the MQTT mqtt_client is connected
-  if (!mqtt_client.connected()) { reconnect(); }
-  mqtt_client.loop();
-  
-  delay(50);
-  publishFireAlert();
 }
 
 
