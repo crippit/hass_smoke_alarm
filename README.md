@@ -54,3 +54,9 @@ The password of the MQTT install
 
 8. String    fire_topic              = "home-assistant/security/smoke_alarm";
 You can edit the topic here, however you need to ensure that this topic is matched in cofniguration.yaml
+
+
+-------------------------
+Uploading the File to the ESP8266 (Wemos D1 Mini)
+
+I used the Arduino editor and uploaded from the application, you will need to make sure that you have added all of the libraries which are identified in the top of the file. You can do this by going to Sketch > Include Libraries > Manage Libraries and searching for the library that you require. You will also need to ensure that you have added the ESP8266 board in the Arduino Application Peferences under "Additional Boards Manager" using the URL: http://arduino.esp8266.com/versions/2.3.0/package_esp8266com_index.json 
